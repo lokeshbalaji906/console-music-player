@@ -133,5 +133,15 @@ public class MusicPlayerApp {
 		}
 	}
 	
-	
+    private static void removeSong(MusicPlayerService service) {
+        System.out.print("Enter Song ID to remove: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        if (service.removeSong(id)) {
+            System.out.println("Song removed.");
+        } else {
+            System.out.println("Song not found.");
+        }
+    }
 }
