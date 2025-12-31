@@ -1,8 +1,8 @@
 package com.demo.musicplayer.model;
 
 public class Playlist {		// DAO
-	private Song[] songs;
-	private int size;
+	private Song[] songs;		// Instance Variables 
+	private int size;			// Instance Variables
 	
 	public Playlist(int capacity) {		// Parameterized Constructor
 		songs = new Song[capacity];
