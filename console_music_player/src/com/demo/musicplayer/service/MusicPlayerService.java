@@ -1,6 +1,7 @@
 package com.demo.musicplayer.service;
 import com.demo.musicplayer.model.Playlist;
 import com.demo.musicplayer.model.Song;
+import com.demo.musicplayer.exception.SongNotFoundException;
 
 public class MusicPlayerService {
     // @Autowired	
@@ -21,7 +22,8 @@ public class MusicPlayerService {
 	public Song play() {
 		Song[] songs = playlist.getAllSongs();
 		if(songs.length == 0) {
-			return null;
+//			return null;
+			throw new SongNotFoundException("No songs available to play");
 		}
 		currentIndex = 0;
 		return songs[currentIndex];
@@ -31,7 +33,8 @@ public class MusicPlayerService {
 	public Song next() {
 		Song[] songs = playlist.getAllSongs();
 		if(songs.length == 0 || currentIndex >= songs.length - 1) { 
-			return null;
+//			return null;
+			throw new SongNotFoundException("No songs available to play");
 		}
 		currentIndex++;
 		return songs[currentIndex];
@@ -41,7 +44,8 @@ public class MusicPlayerService {
 	public Song previous() {
 		Song[] songs = playlist.getAllSongs();
 		if(currentIndex<=0) {
-			return null;
+//			return null;
+			throw new SongNotFoundException("No songs available to play");
 		}
 		currentIndex--;
 		return songs[currentIndex];
@@ -55,7 +59,8 @@ public class MusicPlayerService {
 				return song;
 			}
 		}
-		return null;
+//		return null;
+		throw new SongNotFoundException("No songs available to play");
 	}
 	
 	// Remove song

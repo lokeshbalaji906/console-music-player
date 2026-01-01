@@ -22,31 +22,35 @@ public class MusicPlayerApp {
 			int choice = scanner.nextInt();
 			scanner.nextLine();
 			
-			switch(choice) {
-            case 1:
-                addSong(service);
-                break;
-            case 2:
-                playSong(service);
-                break;
-            case 3:
-                playNext(service);
-                break;
-            case 4:
-                playPrevious(service);
-                break;
-            case 5:
-                searchSong(service);
-                break;
-            case 6:
-                removeSong(service);
-                break;
-            case 0:
-            	running = false;
-            	System.out.println("Exiting Music Player...");
-            	break;
-            default:
-            	System.out.println("Invalid Option. Try again");
+			try {
+				switch(choice) {
+	            case 1:
+	                addSong(service);
+	                break;
+	            case 2:
+	                playSong(service);
+	                break;
+	            case 3:
+	                playNext(service);
+	                break;
+	            case 4:
+	                playPrevious(service);
+	                break;
+	            case 5:
+	                searchSong(service);
+	                break;
+	            case 6:
+	                removeSong(service);
+	                break;
+	            case 0:
+	            	running = false;
+	            	System.out.println("Exiting Music Player...");
+	            	break;
+	            default:
+	            	System.out.println("Invalid Option. Try again");
+				}
+			}catch(RuntimeException e) {
+				System.out.println("Error: "+e.getMessage());
 			}
 		}
 		scanner.close();

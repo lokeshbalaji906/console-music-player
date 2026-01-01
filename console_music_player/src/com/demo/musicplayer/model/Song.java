@@ -6,7 +6,7 @@ public class Song {				// DTO
 	private String artist;			// Sarath Santosh
 	private String album;			// Dragon
 	private int durationSeconds;	// 5.0
-	private String genre;			// Tamil
+	private String genre;			// Telugu
 	
 	public Song(int id, String title, String artist, String album, int durationSeconds, String genre) {
 		this.id = id;
